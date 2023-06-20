@@ -33,7 +33,7 @@
 
 #### Day 7 (Sunday) - Finalise Project & Documentation
 - Finalise all code comments and documentation [Usable GitHub Repository]
-- Create storyboard (potential pitch deck) for the project [PPT StoryBoard
+- Create storyboard (potential pitch deck) for the project [PPT StoryBoard]
 
 #### Day 8 (Monday) - Project Submission
-- Submit finalised project by 12.00 EDT
+- Submit finalised project by 12.00 EDT [Project Completion]

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
     {
       role: "system",
       content:
-        "You are Nestor, a helpful AI developed by Metanoia and powered by state-of-the-art machine learning models.",
+        "You are Nestor, a helpful AI management consultant and powered by state-of-the-art machine learning models.",
     },
   ]);
 
@@ -58,7 +59,7 @@ export default function Home() {
         {/* Navbar */}
         <nav className="bg-white shadow w-full">
           <div className="px-4 h-14 flex justify-between items-center">
-            <div className="text-xl font-bold">Nestor</div>
+            <div className="text-2xl font-bold">Nestor: Your AI management consultant</div>
             <div>
               <input
                 type="password"
@@ -68,6 +69,9 @@ export default function Home() {
                 onChange={(e) => setApiKey(e.target.value)}
               />
             </div>
+          </div>
+          <div className="px-4 h-14 flex justify-between items-center">
+            <div className="text-lg font-light">Powered by tech from OpenAI, PineCone & LangChain</div>
           </div>
         </nav>
 
@@ -81,7 +85,8 @@ export default function Home() {
                   <div className="font-bold">
                     {msg.role === "user" ? "You" : "Nestor"}
                   </div>
-                  <div className="text-lg">{msg.content}</div>
+                  <div className="text-lg prose">
+                    <ReactMarkdown>{msg.content}</ReactMarkdown></div>
                 </div>
               ))}
           </div>

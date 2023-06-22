@@ -9,7 +9,7 @@ export default function Home() {
     {
       role: "system",
       content:
-        "You are Nestor, a helpful AI management consultant and powered by state-of-the-art machine learning models.",
+        "You are Nestor, a helpful management consultant.",
     },
   ]);
 
@@ -81,7 +81,7 @@ export default function Home() {
             {messages
               .filter((msg) => msg.role !== "system")
               .map((msg, idx) => (
-                <div key={idx} className="mt-3">
+                <div key={idx} className="my-3">
                   <div className="font-bold">
                     {msg.role === "user" ? "You" : "Nestor"}
                   </div>
@@ -97,7 +97,7 @@ export default function Home() {
           <textarea
             className="border rounded-md text-lg p-2 flex-1"
             rows={1}
-            placeholder="Ask me anything..."
+            placeholder="How can I help you..."
             value={userMessage}
             onChange={(e) => setUserMessage(e.target.value)}
           />

@@ -2,9 +2,9 @@ import { useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 import { createParser } from "eventsource-parser";
+const APIKEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 export default function Home() {
-  const [apiKey, setApiKey] = useState("");
   const [userMessage, setUserMessage] = useState("");
   const [messages, setMessages] = useState([
     {
@@ -32,8 +32,8 @@ export default function Home() {
       const response = await fetch(API_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${apiKey}`,
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer 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`,
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
@@ -95,15 +95,6 @@ export default function Home() {
         <nav className="bg-white shadow w-full">
           <div className="px-4 h-14 flex justify-between items-center">
             <div className="text-2xl font-bold">Nestor: Your AI Management Consultant</div>
-            <div>
-              <input
-                type="password"
-                className="border rounded p-1"
-                placeholder="Enter API key.."
-                value={apiKey}
-                onChange={(e) => setApiKey(e.target.value)}
-              />
-            </div>
           </div>
           <div className="px-4 h-14 flex justify-between items-center">
             <div className="text-lg font-light">Powered by tech from OpenAI, PineCone & LangChain</div>
@@ -118,7 +109,7 @@ export default function Home() {
               .map((msg, idx) => (
                 <div key={idx} className="my-3">
                   <div className="font-bold">
-                    {msg.role === "user" ? "Query" : "Response"}
+                    {msg.role === "user" ? "Client's Query" : "Consultant's Advice"}
                   </div>
                   <div className="text-lg prose">
                     <ReactMarkdown>{msg.content}</ReactMarkdown></div>

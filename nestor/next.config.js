@@ -3,4 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  env: {
+    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  },
+}

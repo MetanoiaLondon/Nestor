@@ -2,6 +2,7 @@ import { useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 import { createParser } from "eventsource-parser";
+const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
 export default function Home() {
   const [userMessage, setUserMessage] = useState("");
@@ -14,6 +15,7 @@ export default function Home() {
   ]);
 
   const API_URL = "https://api.openai.com/v1/chat/completions";
+  //const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
   const sendRequest = async () => {
     const updatedMessages = [
@@ -32,7 +34,7 @@ export default function Home() {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer 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`,
+          'Authorization': `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",

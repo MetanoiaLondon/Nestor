@@ -97,7 +97,7 @@ export default function Home() {
             <div className="text-2xl font-bold">Nestor: Your AI Management Consultant</div>
           </div>
           <div className="px-4 h-14 flex justify-between items-center">
-            <div className="text-lg font-light">Powered by tech from OpenAI, PineCone & LangChain</div>
+            <div className="text-lg font-light">POC powered by tech from PineCone, OpenAI & LangChain</div>
           </div>
         </nav>
 

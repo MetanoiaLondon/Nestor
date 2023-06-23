@@ -1,10 +1,21 @@
+require('dotenv').config();
 import { useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 import { createParser } from "eventsource-parser";
-const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
+import { Configuration, OpenAIApi } from "openai";
+
+const openaiConfig = new Configuration({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY
+});
+
+const openai = new OpenAIApi(openaiConfig);
+
+console.log(openaiConfig.apiKey)
+console.log(`Bearer ${openaiConfig.apiKey}`)
 
 export default function Home() {
+
   const [userMessage, setUserMessage] = useState("");
   const [messages, setMessages] = useState([
     {
@@ -15,7 +26,6 @@ export default function Home() {
   ]);
 
   const API_URL = "https://api.openai.com/v1/chat/completions";
-  //const apiKey = process.env.REACT_APP_OPENAI_API_KEY;
 
   const sendRequest = async () => {
     const updatedMessages = [
@@ -34,7 +44,7 @@ export default function Home() {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${apiKey}`,
+          'Authorization': `Bearer ${openaiConfig.apiKey}`,
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",

@@ -94,7 +94,7 @@ export default function Home() {
         {/* Navbar */}
         <nav className="bg-white shadow w-full">
           <div className="px-4 h-14 flex justify-between items-center">
-            <div className="text-2xl font-bold">Nestor: Your AI management consultant</div>
+            <div className="text-2xl font-bold">Nestor: Your AI Management Consultant</div>
             <div>
               <input
                 type="password"
@@ -118,7 +118,7 @@ export default function Home() {
               .map((msg, idx) => (
                 <div key={idx} className="my-3">
                   <div className="font-bold">
-                    {msg.role === "user" ? "You" : "Nestor"}
+                    {msg.role === "user" ? "Query" : "Response"}
                   </div>
                   <div className="text-lg prose">
                     <ReactMarkdown>{msg.content}</ReactMarkdown></div>

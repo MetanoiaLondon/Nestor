@@ -2,7 +2,6 @@ import { useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 import { createParser } from "eventsource-parser";
-//const APIKEY = process.env.REACT_APP_OPENAI_API_KEY;
 
 export default function Home() {
   const [userMessage, setUserMessage] = useState("");

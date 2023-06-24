@@ -9,8 +9,6 @@ const openaiConfig = new Configuration({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY
 });
 
-const openai = new OpenAIApi(openaiConfig);
-
 console.log(openaiConfig.apiKey)
 console.log(`Bearer ${openaiConfig.apiKey}`)
 

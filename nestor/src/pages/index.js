@@ -6,11 +6,12 @@ import { createParser } from "eventsource-parser";
 import { Configuration } from "openai";
 
 const openaiConfig = new Configuration({
-  apiKey: process.env.REACT_APP_OPENAI_API_KEY
-});
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY
 
-console.log(openaiConfig.apiKey)
-console.log(`Bearer ${openaiConfig.apiKey}`)
+});
+console.log(openaiConfig); // check if openaiConfig is defined and has the apiKey property
+console.log(openaiConfig.NEXT_PUBLIC_OPENAI_API_KEY
+  ); // check if apiKey property exists and has a value
 
 export default function Home() {
 
@@ -42,7 +43,8 @@ export default function Home() {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${process.env.REACT_APP_OPENAI_API_KEY}`,
+          'Authorization': `Bearer ${openaiConfig.apiKey}`,
+          
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
@@ -92,7 +94,6 @@ export default function Home() {
       window.alert("Error:" + error.message);
     }
   };
-
 
   return (
     <>

@@ -130,7 +130,7 @@ export default function Home() {
         {/* Navbar */}
         <nav className="bg-white shadow w-full">
           <div className="px-4 h-14 flex justify-between items-center">
-            <div className="text-2xl font-bold">Nestor: Your AI Business Consultant</div>
+            <div className="text-2xl font-bold">Nestor: Your AI Consultant</div>
           </div>
           <div className="px-4 h-14 flex justify-between items-center">
             <div className="text-lg font-light">Powered by PineCone and OpenAI</div>

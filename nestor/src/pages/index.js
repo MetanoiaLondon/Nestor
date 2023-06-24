@@ -3,7 +3,7 @@ import { useState } from "react";
 import ReactMarkdown from 'react-markdown'
 import Head from "next/head";
 import { createParser } from "eventsource-parser";
-import { Configuration, OpenAIApi } from "openai";
+import { Configuration } from "openai";
 
 const openaiConfig = new Configuration({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY
